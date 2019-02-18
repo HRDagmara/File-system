@@ -22,19 +22,18 @@ fs.stat('./cat.jpg', function(err, stats) {
 
 fs.readdir('../File system', 'utf-8', function(err, files) {
 	console.log('files');
-
 	for (var i=0; i<files.length; i++) {
 		console.log(files[i]);
 	}
-
 	fs.writeFile('message.txt', [files], function(err) {
   		if (err) throw err;
   		console.log('Zapisano!');
-    	fs.readdir('./message.txt', 'utf-8', function(err, data) {
+       	fs.readdir('./message.txt', 'utf-8', function(err, data) {
     		console.log(data);	
     	});
 	});
 });
+
 
 
 
